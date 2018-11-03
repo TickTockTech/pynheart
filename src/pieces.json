@@ -7,7 +7,9 @@
 		"defence": 10,
 		"attack": 0,
 		"console_chr": "#",
-		"pihat_col": {"r":96,"g":96,"b":96}
+		"pihat_col": {"r":96,"g":96,"b":96},
+        "cost": 0,
+        "max": 1
 	},
 	"DisassemblyMine":
 	{
@@ -17,7 +19,8 @@
 		"defence": 99,
 		"attack": 0,
 		"console_chr": "*",
-		"pihat_col": {"r":96,"g":0,"b":0}
+		"pihat_col": {"r":96,"g":0,"b":0},
+        "cost": 5
 	},
 	"AntiVirus":
 	{
@@ -27,7 +30,8 @@
 		"defence": 5,
 		"attack": 9,
 		"console_chr": "@",
-		"pihat_col": {"r":96,"g":96,"b":0}
+		"pihat_col": {"r":96,"g":96,"b":0},
+        "cost": 10
 	},
 	"Firewall": {
 		"defender": true,
@@ -36,7 +40,8 @@
 		"defence": 6,
 		"attack": 6,
 		"console_chr": "-",
-		"pihat_col": {"r":96,"g":0,"b":96}
+		"pihat_col": {"r":96,"g":0,"b":96},
+        "cost":10
 	},
 
 	"EntryTile": {
@@ -47,7 +52,10 @@
 		"defence": 0,
 		"attack": 0,
 		"console_chr": "O",
-		"pihat_col": {"r":0,"g":96,"b":0}
+		"pihat_col": {"r":0,"g":96,"b":0},
+        "cost": -50,
+        "cost_reduction": 10,
+        "max": 4
 	},
 
 	"Virus": {
@@ -57,7 +65,8 @@
 		"defence": 5,
 		"attack": 9,
 		"console_chr": "v",
-		"pihat_col": {"r":160,"g":0,"b":160}
+		"pihat_col": {"r":160,"g":0,"b":160},
+        "cost": 15
 	},
 	"CorruptionBomb": {
 		"defender": false,
@@ -66,7 +75,8 @@
 		"defence": 2,
 		"attack": 10,
 		"console_chr": "§",
-		"pihat_col": {"r":0,"g":160,"b":0}
+		"pihat_col": {"r":0,"g":160,"b":0},
+        "cost":25
 	},
 	"CoreKiller": {
 		"defender": false,
@@ -75,7 +85,9 @@
 		"defence": 1,
 		"attack": 11,
 		"console_chr": "&",
-		"pihat_col": {"r":160,"g":0,"b":0}
+		"pihat_col": {"r":160,"g":0,"b":0},
+        "cost": 10,
+        "max": 2
 	},
 	"PortProbe": {
 		"defender": false,
@@ -84,6 +96,7 @@
 		"defence": 1,
 		"attack": 1,
 		"console_chr": "^",
-		"pihat_col": {"r":0,"g":0,"b":160}
+		"pihat_col": {"r":0,"g":0,"b":160},
+        "cost": 5
 	}
 }

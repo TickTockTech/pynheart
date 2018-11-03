@@ -1,0 +1,13 @@
+How to Play
+-----------
+
+There are two players, an attacker and a defender.
+
+When play starts the defender gets to place a number of pieces on the board. They must place their Central Core 
+at this point. Other pieces are optional. Each piece has a cost. The defender can place as many as they have 
+the resources (rez) for. The defender must also place at least one entry point.
+
+The attacker then gets to play. They must first spawn a piece at an entry point and move it. In future turns the 
+attacker may move an existing piece or spawn a new piece and move it.
+
+The defender and attacker alternate goes from now on. The defender may choose not to move on his go.

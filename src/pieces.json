@@ -1,0 +1,89 @@
+{
+	"CentralCore":
+	{
+		"defender": true,
+		"name": "Central Core",
+		"moves": 0,
+		"defence": 10,
+		"attack": 0,
+		"console_chr": "#",
+		"pihat_col": {"r":96,"g":96,"b":96}
+	},
+	"DisassemblyMine":
+	{
+		"defender": true,
+		"name": "Disassembly Mine",
+		"moves": 0,
+		"defence": 99,
+		"attack": 0,
+		"console_chr": "*",
+		"pihat_col": {"r":96,"g":0,"b":0}
+	},
+	"AntiVirus":
+	{
+		"defender": true,
+		"name": "Anti-Virus",
+		"moves": 1.5,
+		"defence": 5,
+		"attack": 9,
+		"console_chr": "@",
+		"pihat_col": {"r":96,"g":96,"b":0}
+	},
+	"Firewall": {
+		"defender": true,
+		"name": "Firewall",
+		"moves": 1,
+		"defence": 6,
+		"attack": 6,
+		"console_chr": "-",
+		"pihat_col": {"r":96,"g":0,"b":96}
+	},
+
+	"EntryTile": {
+		"defender": true,
+		"entry_point": true,
+		"name": "Entry Tile",
+		"moves": 0,
+		"defence": 0,
+		"attack": 0,
+		"console_chr": "O",
+		"pihat_col": {"r":0,"g":96,"b":0}
+	},
+
+	"Virus": {
+		"defender": false,
+		"name": "Virus",
+		"moves": 1.5,
+		"defence": 5,
+		"attack": 9,
+		"console_chr": "v",
+		"pihat_col": {"r":160,"g":0,"b":160}
+	},
+	"CorruptionBomb": {
+		"defender": false,
+		"name": "Corruption Bomb",
+		"moves": 1,
+		"defence": 2,
+		"attack": 10,
+		"console_chr": "§",
+		"pihat_col": {"r":0,"g":160,"b":0}
+	},
+	"CoreKiller": {
+		"defender": false,
+		"name": "Core Killer",
+		"moves": 1.5,
+		"defence": 1,
+		"attack": 11,
+		"console_chr": "&",
+		"pihat_col": {"r":160,"g":0,"b":0}
+	},
+	"PortProbe": {
+		"defender": false,
+		"name": "Port Probe",
+		"moves": 3,
+		"defence": 1,
+		"attack": 1,
+		"console_chr": "^",
+		"pihat_col": {"r":0,"g":0,"b":160}
+	}
+}

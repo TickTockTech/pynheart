@@ -45,15 +45,15 @@ PionPiece.loadPieces(pieces_file)
 #create_board(width, height)
 
 #Log.debug("Loading board from file: game.json")
-latest_board = os.path.abspath(os.path.join(os.path.dirname(__file__), "latest.json"))
-board = PionBoard.load(latest_board)
-#board = PionBoard(8, 8)
+#latest_board = os.path.abspath(os.path.join(os.path.dirname(__file__), "latest.json"))
+#board = PionBoard.load(latest_board)
+board = PionBoard(8, 8)
 
 game = PionGame(board)
 #print board.toString()
 
 # Should be two controllers - attacker and defender.
-input_ = config.get("input", "source")
+input_ = config.get("input", "primary")
 
 if input_ == "curses":
     controller = PionCursesController(game, board)

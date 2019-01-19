@@ -12,9 +12,15 @@ PionController
 '''
 
 class PionController(Controller):
+
+    SET_UP_BOARD = 2
+    MOVE_PIECE_MODE = 1
+    MENU_MODE = 0
+
     def __init__(self, controllable, board):
         super(PionController, self).__init__(controllable)
-        
+
+        self.mode = PionController.MOVE_PIECE_MODE
         self.board = board
         self.cursor = {
             "x": 0,

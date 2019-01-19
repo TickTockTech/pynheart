@@ -6,6 +6,7 @@ from pionheart.pionboard import PionBoard
 from pionheart.pionpiece import PionPiece
 from pionheart.pioncursescontroller import PionCursesController
 from pionheart.piontextcontroller import PionTextController
+from pionheart.pionaicontroller import PionAIController
 from pionheart.pioncursesrenderer import PionCursesRenderer
 from pionheart.pionkivyrenderer import PionKivyRenderer
 from pionheart.pionhatrenderer import PionHatRenderer
@@ -53,37 +54,51 @@ game = PionGame(board)
 #print board.toString()
 
 # Should be two controllers - attacker and defender.
-input_ = config.get("input", "primary")
+primary_input = config.get("input", "primary")
 
-if input_ == "curses":
-    controller = PionCursesController(game, board)
-elif input_ == "text":
-    controller = PionTextController(game, board)
+if primary_input == "curses":
+    primary_controller = PionCursesController(game, board)
+elif primary_input == "text":
+    primary_controller = PionTextController(game, board)
+
+secondary_input = config.get("input", "secondary")
+
+if secondary_input == "ai":
+    secondary_controller = PionAIController(game, board)
+elif secondary_input == "net":
+    secondary_controller = PionNetController(game, board)
 
 rendermode = config.get("graphics", "renderer")
-print "Input [" + input_ + "]"
+print "1st Input [" + primary_input + "]"
+print "2nd Input [" + secondary_input + "]"
 print "Render [" + rendermode + "]"
 
 if rendermode == "curses":
-    renderer = PionCursesRenderer(game, controller)
+    renderer = PionCursesRenderer(game, primary_controller)
 elif rendermode == "pihat":
-    renderer = PionHatRenderer(game, controller)
+    renderer = PionHatRenderer(game, primary_controller)
 elif rendermode == "kivy":
-    renderer = PionKivyRenderer(game, controller)
+    renderer = PionKivyRenderer(game, primary_controller)
+
+primary_attacker = config.get("game", "primary") == "attacker"
 
 #TODO: Should not assume there is only one controller.
 def game_loop():
+    global primary_controller, secondary_controller
     while game.running:
         renderer.render()
-        controller.getInput()
+        if (game.getRound() == PionGame.DEFENCE_ROUND and not primary_attacker) or (PionGame.ATTACK_ROUND and primary_attacker):
+            primary_controller.getInput()
+        else:
+            secondary_controller.getInput()
 
 if rendermode == "curses":
     from curses import wrapper
 
     def curses_loop(stdscr):
         renderer.init(stdscr)
-        if input_ == "curses":
-            controller.hookUp(stdscr)
+        if primary_input == "curses":
+            primary_controller.hookUp(stdscr)
         game_loop()
 
     wrapper(curses_loop)
